@@ -1,3 +1,5 @@
+![SysWDS intro](https://github.com/rafaelfndev/SysWDS/blob/main/_FILES/Imagens/top.bmp)
+
 # Aviso importante
 Esse é um projeto que desenvolvi há muitos anos (completou 10 anos agora em 2023). Infelizmente **não** estarei implementando nenhuma outra funcionalidade ou realizando correções, e também **não** tenho como oferecer nenhum tipo de suporte daqui em diante.
 
