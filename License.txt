@@ -1,0 +1,28 @@
+Este Software é livre, e desenvolvido com outros Softwares livres!
+Use por sua conta em risco.
+
+Bem Vindo a instalação do Syslinux para WDS
+
+• Versões Suportadas (32 Bits e 64 Bits):
+Windows Server 2003 R2 com Service Pack 2
+Windows Server 2008
+Windows Server 2008 R2
+Windows Server 2012
+
+• Requisitos para instalação:
+Ter previamente instalado Servidor DHCP e o AD (Active Directory), assim logo após o termino da instalação o serviço WDS já estará instalado e funcionando com o Syslinux configurado.
+
+Antes de instalar no Windows Server 2003 R2 SP2 insira o CD de instalação do Windows, nesta versão, diferente dos outros sistemas, adiciona funções utilizando 'recursos do Windows', e estes recursos adicionais são instalados através do CD de instalação. Apesar de necessitar do CD de instalação, todo processo é automático, mas caso não seja inserido o CD de instalação, provavelmente será exibido algumas mensagens de erro e certamente a instalação irá falhar.
+
+• Recomendações:
+Caso o serviço WDS ja esteja instalado, recomendo remover antes de instalar este programa ou indicar a pasta onde esta instalado o WDS (Não contendo nenhuma modificação).
+
+• Importante:
+Não instale o WDS em uma pasta com espaços no nome ou a instalação irá falhar. Não adicione pasta com espaços no nome que não ira funcionar.
+
+Este software não faz alterações no registro ou cria arquivos 'desnecessários' em qualquer outra pasta que não seja a pasta da instalação, para removê-lo basta apagar os arquivos localizados na pasta onde o mesmo se encontra instalado, caso ocorra algum problema com o WDS, reinstale o serviço para remover qualquer configuração que este software tenha feito.
+
+Para mais informações visite:
+https://rafaelfndev.com.br/
+
+By rafaelfndev

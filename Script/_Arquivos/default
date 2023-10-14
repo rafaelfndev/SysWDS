@@ -1,0 +1,91 @@
+#-------------------------------------------------------#
+#	CONFIGURACAO PADRAO (NAO ALTERAR)
+#-------------------------------------------------------#
+
+DEFAULT        vesamenu.c32
+MENU TITLE     Boot PXE
+MENU INCLUDE   pxelinux.cfg/graphics.conf
+
+
+#-------------------------------------------------------#
+#	Boot Local
+#-------------------------------------------------------#
+
+LABEL local
+   MENU LABEL  ^1. Boot Local (Iniciar no HD principal)
+   KERNEL      abortpxe.0
+   TEXT HELP
+Inicia o Sistema que esta instalado no HD do computador local
+   ENDTEXT
+
+
+#-------------------------------------------------------#
+#	Boot no WDS
+#-------------------------------------------------------# 
+
+LABEL Windows
+   MENU LABEL  ^2. Instalar Windows XP/Vista/7/8 32 (x86 x64)
+   KERNEL      pxeboot.0 keeppxe
+   TEXT HELP
+Instale qualquer versao do Windows atraves da rede utilizando o WDS
+   ENDTEXT
+
+	
+#-------------------------------------------------------#
+#	Teste de Memoria
+#-------------------------------------------------------#
+
+#Identificação do Titulo
+	LABEL Memtest	
+
+#Nome que vai aparecer no menu do WDS
+	MENU LABEL ^3. Teste de Memoria
+
+#Arquivo que ira carregar
+	KERNEL Arquivos_e_ISOS/Ferramentas/Teste_de_Memoria/memtest
+
+	TEXT HELP
+Realiza testes na memoria a procura de erros
+	ENDTEXT
+	
+
+#-------------------------------------------------------#
+#	ThinStation
+#-------------------------------------------------------#
+
+	LABEL Thinstation	
+	MENU LABEL ^4. ThinStation
+	KERNEL Arquivos_e_ISOS/Sistemas/Thinstation/vmlinuz
+	APPEND ramdisk_blocksize=4096 initrd=Arquivos_e_ISOS/Sistemas/Thinstation/initrd root=/dev/ram0 ramdisk_size=524288 console=ttyS3 splash=silent vga=791
+	TEXT HELP
+Inicializa o ThinStation
+	ENDTEXT
+
+#-------------------------------------------------------#
+#	ISOs (adicionar isos da mesma forma)
+#
+#	^ Tecla de atalho, ex:
+#	^R (ao apertar 'R' vai direto ao menu)
+#
+#	exemplos:
+#	^1 - Ghost
+#	^2 - Reparacao do Sistema
+#	^3 - Instalar Windows
+#-------------------------------------------------------#
+
+
+#=======================================================#
+#	Duplique este menu para adicionar mais ISOs
+#=======================================================#
+	LABEL MinhaIso1
+	MENU LABEL ^R. Adicione sua ISO aqui!
+	KERNEL memdisk
+	INITRD /Arquivos_e_ISOS/ISOS/iso_exemplo.iso
+	APPEND iso
+	TEXT HELP
+Adicione a descricao dos seus sistemas desta forma entre 'TEXT HELP e ENDTEXT'
+	ENDTEXT
+#=======================================================#
+
+
+

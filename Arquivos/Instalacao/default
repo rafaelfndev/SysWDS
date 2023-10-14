@@ -1,0 +1,135 @@
+#-------------------------------------------------------#
+#	CONFIGURACOES PADRAO
+#-------------------------------------------------------#
+
+# By rafaelfndev
+# rafaelfndev.com.br
+
+DEFAULT        vesamenu.c32
+
+#Titulo da tela principal do Syslinux
+MENU TITLE     --== SysWDS by rafaelfndev ==--
+MENU INCLUDE   pxelinux.cfg/graphics.conf
+
+
+#-------------------------------------------------------#
+#	Boot Local
+#-------------------------------------------------------#
+
+LABEL local
+   MENU LABEL  ^1. Boot Local (Iniciar no HD principal)
+   KERNEL      abortpxe.0
+   TEXT HELP
+Inicia o Sistema que esta instalado no HD do computador local
+   ENDTEXT
+
+
+#-------------------------------------------------------#
+#	Boot no WDS
+#-------------------------------------------------------# 
+
+LABEL Windows
+   MENU LABEL  ^2. Instalar Windows XP/Vista/7/8 (x86 e x64)
+   KERNEL      pxeboot.0 keeppxe
+   TEXT HELP
+Instale qualquer versao do Windows atraves da rede utilizando o WDS
+   ENDTEXT
+
+	
+#-------------------------------------------------------#
+#	Teste de Memoria
+#-------------------------------------------------------#
+
+#Identificação do Titulo
+	LABEL Memtest	
+
+#Nome que vai aparecer no menu do WDS
+	MENU LABEL ^3. Teste de Memoria
+
+#Arquivo que ira carregar
+	KERNEL Arquivos_e_ISOS/Ferramentas/Teste_de_Memoria/memtest
+
+	TEXT HELP
+Realiza testes na memoria a procura de erros
+	ENDTEXT
+	
+#-------------------------------------------------------#
+#	Hardware Detection Tool
+#-------------------------------------------------------#	
+	
+	LABEL Hdt
+	MENU LABEL ^4. Informacoes de Hardware
+	KERNEL memdisk
+	INITRD /Arquivos_e_ISOS/ISOS/hdt-0.5.2.iso
+	APPEND iso
+	TEXT HELP
+Veja todas as informacoes sobre o Hardware do seu computador
+	ENDTEXT
+	
+#-------------------------------------------------------#
+#	ThinStation
+#-------------------------------------------------------#
+
+	LABEL Thinstation	
+	MENU LABEL ^5. ThinStation
+	KERNEL Arquivos_e_ISOS/Sistemas/Thinstation/vmlinuz
+	APPEND ramdisk_blocksize=4096 initrd=Arquivos_e_ISOS/Sistemas/Thinstation/initrd root=/dev/ram0 ramdisk_size=524288 console=ttyS3 splash=silent vga=791
+	TEXT HELP
+Inicializa o ThinStation
+	ENDTEXT
+
+#-------------------------------------------------------#
+#	ISOs (adicionar isos da mesma forma)
+#
+#	^ Tecla de atalho, ex:
+#	^R (ao apertar 'R' vai direto ao menu)
+#
+#	exemplos:
+#	^1 - Ghost
+#	^2 - Reparacao do Sistema
+#	^3 - Instalar Windows
+#
+#	Importante:
+#	Não é recomendado adicionar ISOs maiores que 100 MB,
+#	podem não funcionar corretamente.
+#	
+#	Para adicionar arquivos e outros sistemas ao menu do
+#	Syslinux utilize o bom e velho Google.
+#	
+#	Para adicionar versões modificadas do Windows ou até
+#	mesmo versões originais, recomendo utilizar o WDS que
+#	pode ser acessado normalmente com o Syslinux através
+#	da Opção 2 no Menu.
+#-------------------------------------------------------#
+
+
+#=======================================================#
+#	Duplique este menu para adicionar mais ISOs
+#=======================================================#
+	LABEL MinhaIso1
+	MENU LABEL ^R. Adicione sua ISO aqui!
+	KERNEL memdisk
+	INITRD /Arquivos_e_ISOS/ISOS/iso_exemplo.iso
+	APPEND iso
+	TEXT HELP
+Adicione a descricao dos seus sistemas desta forma entre 'TEXT HELP e ENDTEXT'
+	ENDTEXT
+#=======================================================#
+
+
+#=======================================================#
+#	Esta opção requer uma senha para ser acessada
+#=======================================================#
+	LABEL MinhaIso2
+	MENU LABEL ^S. Esta Opcao requer uma senha!
+	KERNEL memdisk
+	# Apague a opção abaixo para remover a senha do menu
+	MENU PASSWD 123
+	INITRD /Arquivos_e_ISOS/ISOS/iso_exemplo.iso
+	APPEND iso
+	TEXT HELP
+A senha e '123'
+	ENDTEXT
+#=======================================================#
+
+
