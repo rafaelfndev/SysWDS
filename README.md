@@ -11,7 +11,7 @@ O domínio rflfn[.]com não me pertence mais há muitos anos, então por favor, 
 Este Software é livre, e desenvolvido com outros Softwares livres! Não me responsabilizo por qualquer dano ou configuração incorreta que você venha a fazer, ou a forma que vai utilizá-lo. Ao utilizar esse software, você assume total risco sobre seu uso.
 
 # SysWDS: Para que serve?
-**SysWDS** é uma junção do [Syslinux](https://wiki.syslinux.org/wiki/index.php?title=The_Syslinux_Project) + [WDS (Windows Deployment Services)](https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012). Esse utilitário instala o Syslinux no WDS de forma automatizada e já configura ambos os serviços.
+**SysWDS** é uma junção do [Syslinux](https://wiki.syslinux.org/wiki/index.php?title=The_Syslinux_Project) + [WDS (Windows Deployment Services)](https://learn.microsoft.com/pt-br/windows/win32/wds/windows-deployment-services-portal). Esse utilitário instala o Syslinux no WDS de forma automatizada e já configura ambos os serviços.
 
 Após a instalação, você consegue dar boot em um computador na rede através do PXE-LAN (sem sistema operacional), e se conectar ao servidor Windows. Após se conectar, é exibido um prompt com algumas opções disponíveis do servidor, como teste de memória, testes de hardware, ThinStation, e diversas outras ferramentas que você pode a adicionar ao menu do Syslinux. Com ele também é possível instalar o Windows através da rede.
 
